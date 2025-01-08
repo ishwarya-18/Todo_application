@@ -1,0 +1,128 @@
+/* General styling for admin page */
+.admin-page-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color); /* Match with app's theme */
+    min-height: 100vh;
+    display: flex;
+    width: 800px; /* Adjusted to a larger width for better layout */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color); /* Match app's text color */
+    margin: 0 auto; 
+    /* Add scroll behavior */
+    max-height: 400px; /* Set a maximum height for the container */
+    overflow-y: auto; /* Add vertical scrolling if content exceeds height */
+    overflow-x: hidden; 
+}
+
+/* Header styling */
+.admin-header {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--header-color); /* Match header color */
+    margin-bottom: 20px;
+}
+
+/* Users container */
+.users-container {
+    width: 100%;
+        height: 100vh; /* Make it span the full height of the page */
+        overflow-y: auto; /* Enable vertical scrolling */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        border-left: 1px solid var(--card-border-color); /* Add a border */
+    max-width: 100%; /* Removed max-width for full width */
+    background-color: var(--card-bg-color); /* Use card background from theme */
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* User list styling */
+.user-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* User item styling */
+.user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--card-border-color);
+    padding: 10px 0;
+    word-wrap: break-word; /* Allow emails to break when needed */
+}
+
+/* Remove border for last user item */
+.user-item:last-child {
+    border-bottom: none;
+}
+
+/* User email styling */
+.user-email {
+    font-size: 16px;
+    color: var(--text-color); /* Match app text color */
+    max-width: 80%; /* Allow space for delete button */
+    word-wrap: break-word; /* Allow long emails to wrap */
+    overflow-wrap: break-word; /* Ensure long words break */
+}
+/* Cross mark for delete action */
+.delete-cross {
+    font-size: 30px; /* Increase the size of the cross */
+    color: var(--delete-bg-color); /* Match delete color */
+    cursor: pointer; /* Show pointer on hover */
+    margin-left: 10px; /* Space between email and cross */
+    transition: color 0.3s ease;
+}
+
+.delete-cross:hover {
+    color: var(--delete-hover-color); /* Change color on hover */
+    font-size: 30px; /* Slight increase on hover for emphasis */
+}
+
+/* Back button */
+.back-button {
+    position: fixed; /* Stick to the viewport */
+    top: 20px; /* Adjust distance from the top */
+    left: 20px; /* Place fully within the visible area */
+    background-color: var(--primary-button-bg);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 16px;
+    font-size: 14px;
+    width: 10%;
+    cursor: pointer;
+    z-index: 1000; /* Ensure visibility above other elements */
+}
+
+
+.back-button:hover {
+    background-color: var(--primary-button-hover-bg);
+}
+
+/* No users message */
+.no-users-message {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+
+:root {
+    --background-color: #f0f4f8; /* Light mild background */
+    --text-color: #333; /* Primary text color */
+    --header-color: #4caf50; /* Header accent color */
+    --card-bg-color: #fff; /* Card background */
+    --card-border-color: #ccc; /* Card border color */
+    --delete-bg-color: #e74c3c; /* Delete button background */
+    --delete-hover-color: #c0392b; /* Delete button hover */
+    --button-text-color: #fff; /* Button text */
+    --primary-button-bg: #4caf50; /* Primary button */
+    --primary-button-hover-bg: #45a049; /* Hover for primary button */
+    --secondary-text-color: #7f8c8d; /* Subtle text color */
+}

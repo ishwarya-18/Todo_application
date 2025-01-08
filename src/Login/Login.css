@@ -1,0 +1,296 @@
+/* Background and layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; /* Light mild background color */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main container */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  transition: none;
+}
+
+/* Auth form styling */
+.auth-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header section styling */
+.auth-header {
+  margin-bottom: 20px;
+}
+
+.auth-header-item {
+  display: flex;
+  justify-content: center; /* Align items to the left */
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.auth-header-item img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.auth-header-item h2,
+.auth-header-item span {
+  font-size: 25px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* Input field styling */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form {
+  text-align: left;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+input:hover {
+  border-color: #45a049;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus effects */
+input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Dark mode background for the signup page */
+body.dark-mode {
+  background-color: #141414;
+  transition: none;
+}
+
+/* Dark mode for the signup container */
+body.dark-mode .auth-container {
+  background-color: #141414;
+  color: #fff;
+  transition: none;
+}
+
+/* Dark mode for the signup form */
+body.dark-mode .auth-form {
+  background-color: #434343;
+  color: #fff;
+  transition: none;
+}
+
+/* Dark mode input fields */
+body.dark-mode input {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  transition: none;
+}
+
+body.dark-mode input::placeholder {
+  color: #bbb;
+}
+
+/* Dark mode button */
+body.dark-mode button {
+  background-color: #333;
+  color: #fff;
+  transition: none;
+}
+
+/* Dark mode hover effects */
+body.dark-mode button:hover {
+  background-color: #555;
+  transition: none;
+}
+
+/* Dark mode footer text */
+body.dark-mode .auth-toggle-link {
+  color: #bbb;
+}
+.auth-toggle-link span {
+  cursor: pointer;
+  color: #4caf50; /* You can style it to match your theme */
+}
+
+.auth-toggle-link span:hover {
+  color: #45a049; /* Change color on hover for better UX */
+}
+
+/* Dark mode header title color */
+body.dark-mode .auth-header-item h2,
+body.dark-mode .auth-header-item span {
+  color: #fff;
+}
+
+body.dark-mode .todo-logo {
+  filter: invert(0.2) brightness(1.2);
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 10px;
+  }
+
+  .auth-header-item {
+    flex-direction: row; /* Keep items on the same line */
+    text-align: center;
+    justify-content: center; /* Center items horizontally */
+  }
+
+  .auth-header-item img {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .auth-form {
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  input,
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .auth-header-item h2,
+  .auth-header-item span {
+    font-size: 22px;
+  }
+}
+
+/* For smaller mobile devices */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 10px;
+  }
+
+  .auth-header-item {
+    flex-direction: row; /* Keep items on the same line */
+    text-align: center;
+    justify-content: center; /* Center items horizontally */
+  }
+
+  .auth-header-item img {
+    width: 35px;
+    margin-right: 8px;
+  }
+
+  .auth-form {
+    padding: 15px;
+    width: 95%;
+    max-width: 350px;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .auth-header-item h2,
+  .auth-header-item span {
+    font-size: 20px;
+  }
+}
+
+/* Tablet responsive (between 480px and 768px) */
+@media (max-width: 1024px) and (min-width: 481px) {
+  .auth-container {
+    padding: 15px;
+  }
+
+  .auth-form {
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .auth-header-item {
+    flex-direction: row; /* Keep items on the same line */
+    justify-content: center;
+  }
+
+  .auth-header-item img {
+    width: 45px;
+    margin-right: 10px;
+  }
+
+  input,
+  button {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .auth-header-item h2,
+  .auth-header-item span {
+    font-size: 23px;
+  }
+}
