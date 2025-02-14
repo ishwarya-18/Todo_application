@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0c42ad67.css",
+    "main.js": "/static/js/main.b99267b4.js",
+    "static/media/college-logo.png": "/static/media/college-logo.5b74fa8ef3b4bd83d89b.png",
+    "index.html": "/index.html",
+    "main.0c42ad67.css.map": "/static/css/main.0c42ad67.css.map",
+    "main.b99267b4.js.map": "/static/js/main.b99267b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c42ad67.css",
+    "static/js/main.b99267b4.js"
+  ]
+}

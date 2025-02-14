@@ -1,0 +1,391 @@
+/* Background and layout */
+body {
+    margin: 0;
+    padding: 0;
+    place-items: center; 
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main container */
+.task-manager-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    transition: background-color 0.3s ease;
+    position: relative;
+    margin: 0 auto;
+    left: left;
+}
+
+/* Task form styling */
+.task-form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header section styling */
+.task-header-section {
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.task-header-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.task-header-item img {
+    width: 50px;
+    margin-right: 10px;
+}
+body.dark-mode .todo-logo {
+  filter: invert(0.2) brightness(1.2);
+}
+
+.task-header-item h2,
+.task-header-item span {
+    font-size: 25px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* Task List Styling */
+.task-list {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.task-item span {
+    width: 80%;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding-right: 10px;
+}
+
+.task-item button {
+    background-color: #f44336;
+    border: none;
+    font-size: 12px;
+    position: relative;
+    width: 60px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.task-item button:hover {
+    background-color: #e53935;
+}
+
+/* Focus effects */
+input:focus {
+    background-color: #fff;
+    border-color: #4caf50;
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Dark mode styling */
+body.dark-mode {
+    background-color: #141414;
+    color: #fff;
+    transition: none;
+}
+
+body.dark-mode .task-form-container {
+    background-color: #434343;
+    color: #fff;
+    transition: none;
+}
+
+body.dark-mode input {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+body.dark-mode input::placeholder {
+    color: #bbb;
+    transition: none;
+
+}
+
+body.dark-mode button {
+    background-color: #333;
+    color: #fff;
+    transition: none;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+    transition: none;
+}
+
+body.dark-mode .task-header-item h2,
+body.dark-mode .task-header-item span {
+    color: #fff;
+    
+}
+/* Circle design with checkmark */
+.task-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.task-circle.marked {
+    background-color: transparent;
+}
+body.dark-mode .task-item span {
+    color: #fff; /* Set the task text color to white in dark mode */
+}
+
+.checkmark {
+    position: absolute;
+    top: -6px;
+    left: -2px;
+    color: white;
+}
+
+/* Style for the task item text with light strikethrough */
+.task-item span {
+    font-size: 16px;
+    padding: 5px;
+    color: #000;
+}
+
+/* Style for the delete button */
+.delete-task-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-task-button:hover {
+    background-color: #e53935;
+}/* Combined Mode and Logout Button */
+/* Combined Mode and Logout Button */
+.combined-button {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    width: 170px;
+    height: 30px;
+    background: linear-gradient(to right, #f44336 50%, #4caf50 50%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed; /* Changed from relative to fixed */
+    top: 20px; /* Adjust based on where you want it on the screen */
+    left: 87%; /* Center horizontally */
+    overflow: hidden; /* Prevent hover artifacts */
+    padding: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.combined-button span {
+    width: 50%; /* Ensure equal width for both halves */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer; /* Pointer cursor for each half */
+}
+
+/* Left half for Logout */
+.combined-button .left-half {
+    background-color: #f44336; /* Green */
+}
+
+.combined-button .left-half:hover {
+    background-color: #d32f2f; /* Darker green on hover */
+}
+
+/* Right half for Toggle Mode */
+.combined-button .right-half {
+    background-color: #4caf50; /* Red */
+}
+
+.combined-button .right-half:hover {
+    background-color: #388e3c; /* Darker red on hover */   
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .task-manager-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .task-form-container {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .task-header-item h2 {
+        font-size: 18px;
+    }
+
+    .task-item span {
+        font-size: 14px;
+    }
+
+    .delete-task-button {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .combined-button {
+        width: 100%;
+        top: 10px;
+        left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .task-list {
+        max-height: 250px;
+    }
+
+    .task-item span {
+        font-size: 14px;  /* Adjust font size for smaller screens */
+    }
+
+    .task-item button {
+        font-size: 10px;  /* Adjust button size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    body.dark-mode .task-form-container {
+        padding: 15px;
+    }
+
+    body.dark-mode .task-header-item h2,
+    body.dark-mode .task-header-item span {
+        color: #fff;
+        font-size: 18px;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task-manager-container {
+        max-width: 80%; /* Reduce the width for smaller screens */
+        padding: 15px;
+    }
+    .task-form-container {
+        padding: 20px;
+    }
+
+    .task-header-item h2 {
+        font-size: 20px;
+    }
+
+    .task-header-item span {
+        font-size: 18px;
+    }
+    .combined-button {
+        width: 120px;  /* Adjust button size */
+        top: 10px;
+        left: 75%;  /* Adjust for smaller screens */
+    }
+
+    .combined-button span {
+        font-size: 12px;  /* Adjust font size */
+    }
+}
+
+/* Admin Button Styling */
+.admin-button {
+    background-color: #4caf50; /* Green background */
+    color: white;
+    border: none;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 90px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: fixed; /* Changed to fixed for positioning relative to the viewport */
+    top: 20px; /* Align to the top of the page */
+    left: 20px; /* Align to the left of the page */
+    height: 30px; 
+    font-weight: bold; /* Bold font for admin button */
+}
+
+/* Hover effect for admin button */
+.admin-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Active effect for admin button */
+.admin-button:active {
+    background-color: #2c6b31; /* Even darker green on click */
+}
+
+/* Focus effect for admin button */
+.admin-button:focus {
+    outline: none; /* Remove the default focus outline */
+}
